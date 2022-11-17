@@ -23,7 +23,7 @@
             Console.WriteLine("Give me a number to add with the first number");
             int num2 = int.Parse(Console.ReadLine());
 
-            int sum = Sum(num1, num2);
+            int sum = Sum(num1, num2, 4, 5, 6);
             Console.WriteLine($"The sum is {sum}");
 
             Console.WriteLine("Give me a number to multiply");
@@ -36,9 +36,14 @@
             Console.WriteLine($"The sum is {product}");
 
         }
-        public static int Sum(int num1, int num2)
+        public static int Sum( params int[] list)
         {
-            return num1 + num2;
+            int sum = 0;
+            for (int i = 0; i < list.Length; i++)
+            {
+                sum = sum + list[i];
+            }
+            return sum;
         }
         public static int Multiply(int x, int y)
         {
